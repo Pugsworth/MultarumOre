@@ -6,17 +6,16 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.decorator.Decorator;
-import net.minecraft.world.gen.decorator.NopeDecoratorConfig;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.OreFeatureConfig.Target;
 import net.pugsworth.randomiteore.RandomiteOreMod;
 import net.pugsworth.randomiteore.world.gen.feature.IGenFunction;
-import net.minecraft.world.gen.feature.Feature;
+import net.pugsworth.randomiteore.world.gen.feature.OreCrossFeature;
 
 public class OreGen
 {
     // public static final Decorator<NopeDecoratorConfig> RANDOMITE_DECORATOR = Registry.register(Registry.DECORATOR, "randomite_decorator", new RandomiteDecorator(NopeDecoratorConfig::deserialize));
-    public static final Feature<OreFeatureConfig> RANDOMITE_FEATURE = Registry.register(Registry.FEATURE, "randomite_ore", new OreFeature(OreFeatureConfig::deserialize));
+    public static final Feature<OreFeatureConfig> RANDOMITE_FEATURE = Registry.register(Registry.FEATURE, "randomite_ore", new OreCrossFeature(OreFeatureConfig::deserialize));
 
     private static IGenFunction generator;
 
@@ -55,7 +54,7 @@ public class OreGen
                 new OreFeatureConfig(
                     Target.NATURAL_STONE,
                     RandomiteOreMod.RANDOMITEORE_BLOCK.getDefaultState(),
-                    3
+                    1
                 ), 
                 Decorator.COUNT_RANGE, 
                 new RangeDecoratorConfig(
@@ -66,11 +65,6 @@ public class OreGen
                 )
             )
         );
-    }
-
-    private static void genTest(Biome biome)
-    {
-
     }
 
     public static void genVein(Biome biome)
