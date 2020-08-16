@@ -1,4 +1,4 @@
-package net.pugsworth.blockadder;
+package net.pugsworth.randomiteore;
 
 import java.lang.reflect.Type;
 
@@ -10,7 +10,9 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import com.google.gson.JsonSyntaxException;
 
-public class RandomiteConfig {
+import org.apache.logging.log4j.Level;
+
+public class RandomiteOreConfig {
     // chance of tnt dropping instead of ore
     public boolean tntEnabled = true;
     public float tntChance = 1.0f/64.0f;
@@ -29,7 +31,7 @@ public class RandomiteConfig {
     public int veinTop = 0;
     public int veinMaximum = 64;
 
-    public RandomiteConfig()
+    public RandomiteOreConfig()
     {
         // JsonSerializer<Float> serializer = new JsonSerializer<Float>() {
         //     @Override
@@ -42,22 +44,23 @@ public class RandomiteConfig {
     }
 
 
-    public static String serialize(RandomiteConfig config)
+    public static String serialize(RandomiteOreConfig config)
     {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         return gson.toJson(config);
     }
 
-    public static RandomiteConfig deserialize(String json)
+    public static RandomiteOreConfig deserialize(String json)
     {
         Gson gson = new Gson();
-        RandomiteConfig config;
+        RandomiteOreConfig config;
         try {
-            config = gson.fromJson(json, RandomiteConfig.class);
+            config = gson.fromJson(json, RandomiteOreConfig.class);
         } catch (JsonSyntaxException e) {
+            RandomiteOreMod.logger.log(Level.ERROR, e.getMessage());
             e.printStackTrace();
-            return null;
+            return new RandomiteOreConfig();
         }
 
         if (config.tntChance > 1.0f) {

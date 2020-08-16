@@ -2,7 +2,7 @@
     "parent": "block/block",
     "textures": {
         "all": "minecraft:block/stone",
-        "overlay": "blockadder:block/example_block",
+        "overlay": "randomiteore:block/randomite_block",
         "particle": "minecraft:block/stone"
     },
     "elements": [

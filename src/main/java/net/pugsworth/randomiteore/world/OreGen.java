@@ -1,4 +1,4 @@
-package net.pugsworth.blockadder.world;
+package net.pugsworth.randomiteore.world;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.Registry;
@@ -9,9 +9,8 @@ import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.decorator.NopeDecoratorConfig;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.OreFeatureConfig.Target;
-import net.pugsworth.blockadder.BlockadderMod;
-import net.pugsworth.blockadder.world.decorator.RandomiteDecorator;
-import net.pugsworth.blockadder.world.gen.feature.IGenFunction;
+import net.pugsworth.randomiteore.RandomiteOreMod;
+import net.pugsworth.randomiteore.world.gen.feature.IGenFunction;
 import net.minecraft.world.gen.feature.Feature;
 
 public class OreGen
@@ -25,7 +24,7 @@ public class OreGen
     {
         // RegistryEntryAddedCallback(Registry.BIOME).register((i, identifier, biome) -> handleBiome(biome));
 
-        switch (BlockadderMod.CONFIG.generationType)
+        switch (RandomiteOreMod.CONFIG.generationType)
         {
             case "cross":
                 generator = OreGen::genCross;
@@ -55,15 +54,15 @@ public class OreGen
                 RANDOMITE_FEATURE, 
                 new OreFeatureConfig(
                     Target.NATURAL_STONE,
-                    BlockadderMod.RANDOMITEORE_BLOCK.getDefaultState(),
+                    RandomiteOreMod.RANDOMITEORE_BLOCK.getDefaultState(),
                     3
                 ), 
                 Decorator.COUNT_RANGE, 
                 new RangeDecoratorConfig(
-                    BlockadderMod.CONFIG.veinCount,
-                    BlockadderMod.CONFIG.veinBottom,
-                    BlockadderMod.CONFIG.veinTop,
-                    BlockadderMod.CONFIG.veinMaximum
+                    RandomiteOreMod.CONFIG.veinCount,
+                    RandomiteOreMod.CONFIG.veinBottom,
+                    RandomiteOreMod.CONFIG.veinTop,
+                    RandomiteOreMod.CONFIG.veinMaximum
                 )
             )
         );
@@ -81,14 +80,14 @@ public class OreGen
                 Feature.ORE, 
                 new OreFeatureConfig(
                     Target.NATURAL_STONE,
-                    BlockadderMod.RANDOMITEORE_BLOCK.getDefaultState(),
-                    BlockadderMod.CONFIG.veinSize),
+                    RandomiteOreMod.RANDOMITEORE_BLOCK.getDefaultState(),
+                    RandomiteOreMod.CONFIG.veinSize),
                 Decorator.COUNT_RANGE,
                 new RangeDecoratorConfig(
-                    BlockadderMod.CONFIG.veinCount,
-                    BlockadderMod.CONFIG.veinBottom,
-                    BlockadderMod.CONFIG.veinTop,
-                    BlockadderMod.CONFIG.veinMaximum
+                    RandomiteOreMod.CONFIG.veinCount,
+                    RandomiteOreMod.CONFIG.veinBottom,
+                    RandomiteOreMod.CONFIG.veinTop,
+                    RandomiteOreMod.CONFIG.veinMaximum
                 )
             )
         );
@@ -101,14 +100,14 @@ public class OreGen
                 Feature.EMERALD_ORE,
                 new net.minecraft.world.gen.feature.EmeraldOreFeatureConfig(
                     Blocks.STONE.getDefaultState(),
-                    BlockadderMod.RANDOMITEORE_BLOCK.getDefaultState()
+                    RandomiteOreMod.RANDOMITEORE_BLOCK.getDefaultState()
                 ),
                 Decorator.COUNT_RANGE,
                 new RangeDecoratorConfig(
-                    BlockadderMod.CONFIG.veinCount, // 50
-                    BlockadderMod.CONFIG.veinBottom, // 0
-                    BlockadderMod.CONFIG.veinTop, // 0
-                    BlockadderMod.CONFIG.veinMaximum // 112
+                    RandomiteOreMod.CONFIG.veinCount, // 50
+                    RandomiteOreMod.CONFIG.veinBottom, // 0
+                    RandomiteOreMod.CONFIG.veinTop, // 0
+                    RandomiteOreMod.CONFIG.veinMaximum // 112
                 )
             )
         );

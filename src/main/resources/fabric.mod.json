@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "id": "blockadder",
+  "id": "randomiteore",
   "version": "${version}",
 
-  "name": "Block Adder",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Randomite Ore",
+  "description": "There's a new ore in town. If you're lucky, it might rewards you with a nice diamond!",
   "authors": [
     "Me!"
   ],
@@ -14,12 +14,12 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/blockadder/icon.png",
+  "icon": "assets/randomiteore/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.pugsworth.blockadder.BlockadderMod"
+      "net.pugsworth.randomiteore.RandomiteOreMod"
     ]
   },
   "mixins": [

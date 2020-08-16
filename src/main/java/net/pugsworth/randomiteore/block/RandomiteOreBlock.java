@@ -1,4 +1,4 @@
-package net.pugsworth.blockadder.block;
+package net.pugsworth.randomiteore.block;
 
 import java.util.Random;
 
@@ -7,9 +7,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.RedstoneTorchBlock;
-import net.minecraft.block.TntBlock;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.entity.TntEntityRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.TntEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -23,7 +21,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
-import net.pugsworth.blockadder.BlockadderMod;
+import net.pugsworth.randomiteore.RandomiteOreMod;
 
 public class RandomiteOreBlock extends Block {
 
@@ -68,7 +66,7 @@ public class RandomiteOreBlock extends Block {
     {
         float rand = world.random.nextFloat();
 
-        if (!world.isClient() && !player.isCreative() && rand < BlockadderMod.CONFIG.tntChance) {
+        if (RandomiteOreMod.CONFIG.tntEnabled && (!world.isClient() && !player.isCreative() && rand < RandomiteOreMod.CONFIG.tntChance)) {
             world.removeBlock(pos, false);
 
             TntEntity tnt = new TntEntity(world, pos.getX()+0.5, pos.getY(), pos.getZ()+0.5, player); // World world, double x, double y, double z, @Nullable LivingEntity igniter

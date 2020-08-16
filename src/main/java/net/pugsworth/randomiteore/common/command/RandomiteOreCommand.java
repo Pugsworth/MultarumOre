@@ -1,4 +1,4 @@
-package net.pugsworth.blockadder.common.command;
+package net.pugsworth.randomiteore.common.command;
 
 import java.util.Iterator;
 import java.util.logging.Logger;
@@ -22,8 +22,8 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
-import net.pugsworth.blockadder.BlockadderMod;
-import net.pugsworth.blockadder.block.RandomiteOreBlock;
+import net.pugsworth.randomiteore.RandomiteOreMod;
+import net.pugsworth.randomiteore.block.RandomiteOreBlock;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.ArgumentType;
@@ -31,14 +31,12 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 
 
-public class BlockadderCommand
+public class RandomiteOreCommand
 {
-    public static final String ROOT_COMMAND = "blockadder";
+    public static final String ROOT_COMMAND = "randomite";
     public static final String CLEAR_STONE_SUBCOMMAND = "clearstone";
 
     private static Block[] _findBlocks = {Blocks.STONE, Blocks.ANDESITE, Blocks.GRANITE, Blocks.DIORITE, Blocks.DIRT, Blocks.GRASS_BLOCK, Blocks.GRAVEL, Blocks.WATER, Blocks.LAVA};
-
-    private static Logger logger = Logger.getLogger("Blockadder");
 
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher)
     {
@@ -84,7 +82,7 @@ public class BlockadderCommand
             BlockPos bpos = (BlockPos)iter.next();
             Block block = world.getBlockState(bpos).getBlock();
 
-            if (!block.equals(BlockadderMod.RANDOMITEORE_BLOCK)) {
+            if (!block.equals(RandomiteOreMod.RANDOMITEORE_BLOCK)) {
                 world.setBlockState(bpos, Blocks.AIR.getDefaultState());
                 world.updateNeighbors(bpos, block);
             }
