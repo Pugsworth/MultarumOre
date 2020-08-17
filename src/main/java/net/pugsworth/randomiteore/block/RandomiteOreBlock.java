@@ -50,7 +50,7 @@ public class RandomiteOreBlock extends Block {
 
     @Override
     public int getLuminance(BlockState state){
-        return (Boolean) state.get(LIT) ? 5 : 0;
+        return (Boolean) state.get(LIT) ? super.getLuminance(state) : 0;
     }
 
     @Override
