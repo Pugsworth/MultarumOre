@@ -84,6 +84,7 @@ public class RandomiteOreMod implements ModInitializer {
 			e.printStackTrace();
 		}
 
+		/*
 		logger.log(Level.INFO, "loaded config:");
 		logger.log(Level.INFO, CONFIG.tntChance);
 		logger.log(Level.INFO, CONFIG.generationType);
@@ -92,6 +93,7 @@ public class RandomiteOreMod implements ModInitializer {
 		logger.log(Level.INFO, CONFIG.veinBottom);
 		logger.log(Level.INFO, CONFIG.veinTop);
 		logger.log(Level.INFO, CONFIG.veinMaximum);
+		*/
 
 		return success;
 	}
