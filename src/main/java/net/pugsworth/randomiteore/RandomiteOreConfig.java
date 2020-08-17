@@ -21,8 +21,8 @@ public class RandomiteOreConfig {
     // choices are cross, single, vein, pillars
     public String generationType = "cross";
 
-    public byte genYMinimum = 8;
-    public byte genYMaximum = 112;
+    // public byte genYMinimum = 8;
+    // public byte genYMaximum = 112;
 
     // vein settings
     public int veinSize = 5;
