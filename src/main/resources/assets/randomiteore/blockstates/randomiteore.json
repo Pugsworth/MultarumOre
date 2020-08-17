@@ -1,0 +1,15 @@
+{
+    "variants": {
+        "": [
+            {"model": "randomiteore:block/randomiteore", "y": 0},
+            {"model": "randomiteore:block/randomiteore", "y": 90},
+            {"model": "randomiteore:block/randomiteore", "y": 180},
+            {"model": "randomiteore:block/randomiteore", "y": 270},
+
+            {"model": "randomiteore:block/randomiteore", "x": 0},
+            {"model": "randomiteore:block/randomiteore", "x": 90},
+            {"model": "randomiteore:block/randomiteore", "x": 180},
+            {"model": "randomiteore:block/randomiteore", "x": 270}
+        ]
+    }
+}

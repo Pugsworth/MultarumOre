@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "randomiteore",
+  "version": "${version}",
+
+  "name": "Randomite Ore",
+  "description": "There's a new ore in town. If you're lucky, it might reward you with a nice diamond!",
+  "authors": [
+    "Pugsworth"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/randomiteore/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.pugsworth.randomiteore.RandomiteOreMod"
+    ]
+  },
+  "mixins": [
+    "modid.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.14.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
