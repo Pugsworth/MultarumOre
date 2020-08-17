@@ -26,10 +26,10 @@ public class RandomiteOreConfig {
 
     // vein settings
     public int veinSize = 5;
-    public int veinCount = 10;
-    public int veinBottom = 0;
+    public int veinCount = 8;
+    public int veinBottom = 8;
     public int veinTop = 0;
-    public int veinMaximum = 64;
+    public int veinMaximum = 32;
 
     public RandomiteOreConfig()
     {
