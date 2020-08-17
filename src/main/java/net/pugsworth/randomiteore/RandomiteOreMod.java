@@ -14,6 +14,7 @@ import io.netty.handler.logging.LogLevel;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.tools.FabricToolTags;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -35,7 +36,12 @@ public class RandomiteOreMod implements ModInitializer {
 
 	public static Logger logger = LogManager.getLogger(MODID);
 
-	public static final Block RANDOMITEORE_BLOCK = registerBlock(new RandomiteOreBlock(FabricBlockSettings.of(Material.STONE).hardness(5.0f)), "randomiteore");
+	public static final Block RANDOMITEORE_BLOCK = registerBlock(new RandomiteOreBlock(FabricBlockSettings
+		.of(Material.STONE)
+		.strength(5.0f, 5.0f)
+		.lightLevel(9)
+		.breakByTool(FabricToolTags.PICKAXES, 2)
+	), "randomiteore");
 
 	@Override
 	public void onInitialize() {
