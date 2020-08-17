@@ -4,9 +4,9 @@
   "version": "${version}",
 
   "name": "Randomite Ore",
-  "description": "There's a new ore in town. If you're lucky, it might rewards you with a nice diamond!",
+  "description": "There's a new ore in town. If you're lucky, it might reward you with a nice diamond!",
   "authors": [
-    "Me!"
+    "Pugsworth"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
