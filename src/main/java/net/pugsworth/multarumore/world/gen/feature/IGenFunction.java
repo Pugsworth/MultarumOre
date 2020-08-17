@@ -1,4 +1,4 @@
-package net.pugsworth.randomiteore.world.gen.feature;
+package net.pugsworth.multarumore.world.gen.feature;
 
 import net.minecraft.world.biome.Biome;
 

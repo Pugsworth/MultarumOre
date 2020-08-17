@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "randomiteore",
+  "id": "multarumore",
   "version": "${version}",
 
-  "name": "Randomite Ore",
+  "name": "Multarum Ore",
   "description": "There's a new ore in town. If you're lucky, it might reward you with a nice diamond!",
   "authors": [
     "Pugsworth"
@@ -14,12 +14,12 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/randomiteore/icon.png",
+  "icon": "assets/multarumore/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.pugsworth.randomiteore.RandomiteOreMod"
+      "net.pugsworth.multarumore.MultarumOreMod"
     ]
   },
   "mixins": [

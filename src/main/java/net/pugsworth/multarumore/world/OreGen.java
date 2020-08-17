@@ -1,4 +1,4 @@
-package net.pugsworth.randomiteore.world;
+package net.pugsworth.multarumore.world;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.Registry;
@@ -8,14 +8,14 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.decorator.Decorator;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.OreFeatureConfig.Target;
-import net.pugsworth.randomiteore.RandomiteOreMod;
-import net.pugsworth.randomiteore.world.gen.feature.IGenFunction;
-import net.pugsworth.randomiteore.world.gen.feature.OreCrossFeature;
+import net.pugsworth.multarumore.MultarumOreMod;
+import net.pugsworth.multarumore.world.gen.feature.IGenFunction;
+import net.pugsworth.multarumore.world.gen.feature.OreCrossFeature;
 
 public class OreGen
 {
-    // public static final Decorator<NopeDecoratorConfig> RANDOMITE_DECORATOR = Registry.register(Registry.DECORATOR, "randomite_decorator", new RandomiteDecorator(NopeDecoratorConfig::deserialize));
-    public static final Feature<OreFeatureConfig> RANDOMITE_FEATURE = Registry.register(Registry.FEATURE, "randomite_ore", new OreCrossFeature(OreFeatureConfig::deserialize));
+    // public static final Decorator<NopeDecoratorConfig> MULTARUM_DECORATOR = Registry.register(Registry.DECORATOR, "multarum_decorator", new MultarumDecorator(NopeDecoratorConfig::deserialize));
+    public static final Feature<OreFeatureConfig> MULTARUM_FEATURE = Registry.register(Registry.FEATURE, "multarumore", new OreCrossFeature(OreFeatureConfig::deserialize));
 
     private static IGenFunction generator;
 
@@ -23,7 +23,7 @@ public class OreGen
     {
         // RegistryEntryAddedCallback(Registry.BIOME).register((i, identifier, biome) -> handleBiome(biome));
 
-        switch (RandomiteOreMod.CONFIG.generationType)
+        switch (MultarumOreMod.CONFIG.generationType)
         {
             case "cross":
                 generator = OreGen::genCross;
@@ -50,18 +50,18 @@ public class OreGen
     {
         biome.addFeature(GenerationStep.Feature.UNDERGROUND_ORES,
             Biome.configureFeature(
-                RANDOMITE_FEATURE, 
+                MULTARUM_FEATURE, 
                 new OreFeatureConfig(
                     Target.NATURAL_STONE,
-                    RandomiteOreMod.RANDOMITEORE_BLOCK.getDefaultState(),
+                    MultarumOreMod.MULTARUMORE_BLOCK.getDefaultState(),
                     1
                 ), 
                 Decorator.COUNT_RANGE, 
                 new RangeDecoratorConfig(
-                    RandomiteOreMod.CONFIG.veinCount,
-                    RandomiteOreMod.CONFIG.veinBottom,
-                    RandomiteOreMod.CONFIG.veinTop,
-                    RandomiteOreMod.CONFIG.veinMaximum
+                    MultarumOreMod.CONFIG.veinCount,
+                    MultarumOreMod.CONFIG.veinBottom,
+                    MultarumOreMod.CONFIG.veinTop,
+                    MultarumOreMod.CONFIG.veinMaximum
                 )
             )
         );
@@ -74,14 +74,14 @@ public class OreGen
                 Feature.ORE, 
                 new OreFeatureConfig(
                     Target.NATURAL_STONE,
-                    RandomiteOreMod.RANDOMITEORE_BLOCK.getDefaultState(),
-                    RandomiteOreMod.CONFIG.veinSize),
+                    MultarumOreMod.MULTARUMORE_BLOCK.getDefaultState(),
+                    MultarumOreMod.CONFIG.veinSize),
                 Decorator.COUNT_RANGE,
                 new RangeDecoratorConfig(
-                    RandomiteOreMod.CONFIG.veinCount,
-                    RandomiteOreMod.CONFIG.veinBottom,
-                    RandomiteOreMod.CONFIG.veinTop,
-                    RandomiteOreMod.CONFIG.veinMaximum
+                    MultarumOreMod.CONFIG.veinCount,
+                    MultarumOreMod.CONFIG.veinBottom,
+                    MultarumOreMod.CONFIG.veinTop,
+                    MultarumOreMod.CONFIG.veinMaximum
                 )
             )
         );
@@ -94,14 +94,14 @@ public class OreGen
                 Feature.EMERALD_ORE,
                 new net.minecraft.world.gen.feature.EmeraldOreFeatureConfig(
                     Blocks.STONE.getDefaultState(),
-                    RandomiteOreMod.RANDOMITEORE_BLOCK.getDefaultState()
+                    MultarumOreMod.MULTARUMORE_BLOCK.getDefaultState()
                 ),
                 Decorator.COUNT_RANGE,
                 new RangeDecoratorConfig(
-                    RandomiteOreMod.CONFIG.veinCount, // 50
-                    RandomiteOreMod.CONFIG.veinBottom, // 0
-                    RandomiteOreMod.CONFIG.veinTop, // 0
-                    RandomiteOreMod.CONFIG.veinMaximum // 112
+                    MultarumOreMod.CONFIG.veinCount, // 50
+                    MultarumOreMod.CONFIG.veinBottom, // 0
+                    MultarumOreMod.CONFIG.veinTop, // 0
+                    MultarumOreMod.CONFIG.veinMaximum // 112
                 )
             )
         );

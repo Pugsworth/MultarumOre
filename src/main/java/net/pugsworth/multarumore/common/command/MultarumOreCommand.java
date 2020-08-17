@@ -1,4 +1,4 @@
-package net.pugsworth.randomiteore.common.command;
+package net.pugsworth.multarumore.common.command;
 
 import java.util.Iterator;
 import java.util.logging.Logger;
@@ -22,8 +22,8 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
-import net.pugsworth.randomiteore.RandomiteOreMod;
-import net.pugsworth.randomiteore.block.RandomiteOreBlock;
+import net.pugsworth.multarumore.MultarumOreMod;
+import net.pugsworth.multarumore.block.MultarumOreBlock;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.ArgumentType;
@@ -31,9 +31,9 @@ import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 
 
-public class RandomiteOreCommand
+public class MultarumOreCommand
 {
-    public static final String ROOT_COMMAND = "randomite";
+    public static final String ROOT_COMMAND = "multiarum";
     public static final String CLEAR_STONE_SUBCOMMAND = "clearstone";
 
     private static Block[] _findBlocks = {Blocks.STONE, Blocks.ANDESITE, Blocks.GRANITE, Blocks.DIORITE, Blocks.DIRT, Blocks.GRASS_BLOCK, Blocks.GRAVEL, Blocks.WATER, Blocks.LAVA};
@@ -82,7 +82,7 @@ public class RandomiteOreCommand
             BlockPos bpos = (BlockPos)iter.next();
             Block block = world.getBlockState(bpos).getBlock();
 
-            if (!block.equals(RandomiteOreMod.RANDOMITEORE_BLOCK)) {
+            if (!block.equals(MultarumOreMod.MULTARUMORE_BLOCK)) {
                 world.setBlockState(bpos, Blocks.AIR.getDefaultState());
                 world.updateNeighbors(bpos, block);
             }

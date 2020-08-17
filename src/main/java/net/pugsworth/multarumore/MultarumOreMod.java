@@ -1,4 +1,4 @@
-package net.pugsworth.randomiteore;
+package net.pugsworth.multarumore;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,33 +22,33 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.pugsworth.randomiteore.block.RandomiteOreBlock;
-import net.pugsworth.randomiteore.common.command.RandomiteOreCommand;
-import net.pugsworth.randomiteore.world.OreGen;
+import net.pugsworth.multarumore.block.MultarumOreBlock;
+import net.pugsworth.multarumore.common.command.MultarumOreCommand;
+import net.pugsworth.multarumore.world.OreGen;
 
-public class RandomiteOreMod implements ModInitializer {
+public class MultarumOreMod implements ModInitializer {
 
-	public static final String MODID = "randomiteore";
+	public static final String MODID = "multarumore";
 
 	public static Path CONFIG_PATH;
-	public static RandomiteOreConfig CONFIG;
+	public static MultarumOreConfig CONFIG;
 
 	public static Logger logger = LogManager.getLogger(MODID);
 
-	public static final Block RANDOMITEORE_BLOCK = registerBlock(new RandomiteOreBlock(FabricBlockSettings
+	public static final Block MULTARUMORE_BLOCK = registerBlock(new MultarumOreBlock(FabricBlockSettings
 		.of(Material.STONE)
 		.strength(5.0f, 5.0f)
 		.lightLevel(9)
 		.breakByTool(FabricToolTags.PICKAXES, 2)
-	), "randomiteore");
+	), "multarum_ore");
 
 	@Override
 	public void onInitialize() {
-		CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve(RandomiteOreMod.MODID + ".json").normalize();
+		CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve(MultarumOreMod.MODID + ".json").normalize();
 
 		if (!CONFIG_PATH.toFile().exists())
 		{
-			CONFIG = new RandomiteOreConfig();
+			CONFIG = new MultarumOreConfig();
 			saveConfig();
 		}
 		else
@@ -60,7 +60,7 @@ public class RandomiteOreMod implements ModInitializer {
 		OreGen.init();
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> {
-			RandomiteOreCommand.register(dispatcher);
+			MultarumOreCommand.register(dispatcher);
 		});
 	}
 
@@ -77,7 +77,7 @@ public class RandomiteOreMod implements ModInitializer {
 		String config;
 		try {
 			config = FileUtils.readFileToString(CONFIG_PATH.toFile(), Charset.defaultCharset());
-			CONFIG = RandomiteOreConfig.deserialize(config);
+			CONFIG = MultarumOreConfig.deserialize(config);
 
 			success = true;
 		} catch (IOException e) {
@@ -104,7 +104,7 @@ public class RandomiteOreMod implements ModInitializer {
 		try {
 			// CONFIG_PATH.getParent().toFile().mkdirs();
 
-			String config = RandomiteOreConfig.serialize(CONFIG);
+			String config = MultarumOreConfig.serialize(CONFIG);
 			FileWriter writer = new FileWriter(CONFIG_PATH.toFile());
 			writer.write(config);
 			writer.close();
@@ -124,5 +124,8 @@ public class RandomiteOreMod implements ModInitializer {
  */
 
 /*
- * TODO Config Replace all ores with Randomite Fix oregen refactor names
+ * TODO
+ * Replace all ores with Multarum
+ * Create "Spike" generation
+ * Refactor name to permanent name: MultarumOre
  */

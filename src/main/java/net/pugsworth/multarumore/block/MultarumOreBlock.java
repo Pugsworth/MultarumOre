@@ -1,4 +1,4 @@
-package net.pugsworth.randomiteore.block;
+package net.pugsworth.multarumore.block;
 
 import java.util.Random;
 
@@ -21,15 +21,15 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
-import net.pugsworth.randomiteore.RandomiteOreMod;
+import net.pugsworth.multarumore.MultarumOreMod;
 
-public class RandomiteOreBlock extends Block {
+public class MultarumOreBlock extends Block {
 
     public static final BooleanProperty LIT;
     private static DustParticleEffect[] _dustParticles = new DustParticleEffect[5];
     private static final Random _random = new Random();
 
-    public RandomiteOreBlock(Settings settings)
+    public MultarumOreBlock(Settings settings)
     {
         super(settings);
         this.setDefaultState((BlockState) this.getDefaultState().with(LIT, false));
@@ -66,7 +66,7 @@ public class RandomiteOreBlock extends Block {
     {
         float rand = world.random.nextFloat();
 
-        if (RandomiteOreMod.CONFIG.tntEnabled && (!world.isClient() && !player.isCreative() && rand < RandomiteOreMod.CONFIG.tntChance)) {
+        if (MultarumOreMod.CONFIG.tntEnabled && (!world.isClient() && !player.isCreative() && rand < MultarumOreMod.CONFIG.tntChance)) {
             world.removeBlock(pos, false);
 
             TntEntity tnt = new TntEntity(world, pos.getX()+0.5, pos.getY(), pos.getZ()+0.5, player); // World world, double x, double y, double z, @Nullable LivingEntity igniter

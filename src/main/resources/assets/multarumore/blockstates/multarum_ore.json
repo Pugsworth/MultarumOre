@@ -1,0 +1,15 @@
+{
+    "variants": {
+        "": [
+            {"model": "multarumore:block/multarum_ore", "y": 0},
+            {"model": "multarumore:block/multarum_ore", "y": 90},
+            {"model": "multarumore:block/multarum_ore", "y": 180},
+            {"model": "multarumore:block/multarum_ore", "y": 270},
+
+            {"model": "multarumore:block/multarum_ore", "x": 0},
+            {"model": "multarumore:block/multarum_ore", "x": 90},
+            {"model": "multarumore:block/multarum_ore", "x": 180},
+            {"model": "multarumore:block/multarum_ore", "x": 270}
+        ]
+    }
+}

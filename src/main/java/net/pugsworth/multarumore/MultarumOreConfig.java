@@ -1,4 +1,4 @@
-package net.pugsworth.randomiteore;
+package net.pugsworth.multarumore;
 
 import java.lang.reflect.Type;
 
@@ -12,7 +12,7 @@ import com.google.gson.JsonSyntaxException;
 
 import org.apache.logging.log4j.Level;
 
-public class RandomiteOreConfig {
+public class MultarumOreConfig {
     // chance of tnt dropping instead of ore
     public boolean tntEnabled = true;
     public float tntChance = 1.0f/64.0f;
@@ -31,7 +31,7 @@ public class RandomiteOreConfig {
     public int veinTop = 0;
     public int veinMaximum = 32;
 
-    public RandomiteOreConfig()
+    public MultarumOreConfig()
     {
         // JsonSerializer<Float> serializer = new JsonSerializer<Float>() {
         //     @Override
@@ -44,23 +44,23 @@ public class RandomiteOreConfig {
     }
 
 
-    public static String serialize(RandomiteOreConfig config)
+    public static String serialize(MultarumOreConfig config)
     {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         return gson.toJson(config);
     }
 
-    public static RandomiteOreConfig deserialize(String json)
+    public static MultarumOreConfig deserialize(String json)
     {
         Gson gson = new Gson();
-        RandomiteOreConfig config;
+        MultarumOreConfig config;
         try {
-            config = gson.fromJson(json, RandomiteOreConfig.class);
+            config = gson.fromJson(json, MultarumOreConfig.class);
         } catch (JsonSyntaxException e) {
-            RandomiteOreMod.logger.log(Level.ERROR, e.getMessage());
+            MultarumOreMod.logger.log(Level.ERROR, e.getMessage());
             e.printStackTrace();
-            return new RandomiteOreConfig();
+            return new MultarumOreConfig();
         }
 
         if (config.tntChance > 1.0f) {

@@ -1,4 +1,4 @@
-package net.pugsworth.randomiteore.world.gen.feature;
+package net.pugsworth.multarumore.world.gen.feature;
 
 import java.util.Random;
 import java.util.function.Function;
