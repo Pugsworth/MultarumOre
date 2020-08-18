@@ -3,10 +3,19 @@ plugins {
 	id 'maven-publish'
 }
 
+// version 'git rev-parse --short HEAD'.execute().getText().trim()
+
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-archivesBaseName = project.archives_base_name
+// git_rev 'git rev-list --count HEAD'.execute().getText().trim()
+// git_hash 'git rev-parse --short HEAD'.execute().getText().trim()
+// git_version = ""
+
+def git_rev = 'git rev-list --count HEAD'.execute().getText().trim()
+def git_hash = 'git rev-parse --short HEAD'.execute().getText().trim()
+
+archivesBaseName = "${project.archives_base_name}-${mod_version}+${project.minecraft_version}"
 version = project.mod_version
 group = project.maven_group
 
@@ -42,6 +51,7 @@ processResources {
 tasks.withType(JavaCompile) {
 	options.encoding = "UTF-8"
 }
+
 
 // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
 // if it is present.
