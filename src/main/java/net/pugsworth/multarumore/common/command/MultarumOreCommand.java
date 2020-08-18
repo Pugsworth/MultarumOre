@@ -1,34 +1,23 @@
 package net.pugsworth.multarumore.common.command;
 
+import static net.minecraft.server.command.CommandManager.literal;
+
 import java.util.Iterator;
-import java.util.logging.Logger;
+
+import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.command.arguments.ArgumentTypes;
 import net.minecraft.command.arguments.Vec2ArgumentType;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.CommandManager;
-import net.minecraft.server.command.CommandSource;
-
-import static net.minecraft.server.command.CommandManager.literal;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockBox;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec2f;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.Chunk;
 import net.pugsworth.multarumore.MultarumOreMod;
-import net.pugsworth.multarumore.block.MultarumOreBlock;
-
-import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.arguments.ArgumentType;
-import com.mojang.brigadier.arguments.IntegerArgumentType;
-import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 
 
 public class MultarumOreCommand
