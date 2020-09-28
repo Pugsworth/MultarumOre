@@ -22,7 +22,7 @@ import net.pugsworth.multarumore.MultarumOreMod;
 
 public class MultarumOreCommand
 {
-    public static final String ROOT_COMMAND = "multiarum";
+    public static final String ROOT_COMMAND = "multarumore";
     public static final String CLEAR_STONE_SUBCOMMAND = "clearstone";
 
     private static Block[] _findBlocks = {Blocks.STONE, Blocks.ANDESITE, Blocks.GRANITE, Blocks.DIORITE, Blocks.DIRT, Blocks.GRASS_BLOCK, Blocks.GRAVEL, Blocks.WATER, Blocks.LAVA};
